@@ -13,6 +13,12 @@ app.get('/greeting/:name', (request,response) => {
 }
 )
 
+app.get('/tip/:total/:tipPercentage', (request,response) => {
+    tip = Number(request.params.total) * Number(request.params.tipPercentage) / 100
+    response.send(`${tip}`)
+}  )
+
+
 
 app.listen(PORT, () =>  {
     console.log('listening on port ', PORT)
